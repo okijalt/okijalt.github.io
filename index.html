@@ -1,6 +1,3 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +10,9 @@ layout: null
     <meta property="og:url" content="https://okijalt.org">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌺</text></svg>">
     <title>Okinawa JALT – Language Teaching Excellence in the Ryukyu Islands</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --ocean-deep: #0A4B78;
@@ -41,7 +36,7 @@ layout: null
         .logo-section { display: flex; align-items: center; gap: 1.5rem; }
         .logo-text h1 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.25rem; }
         .logo-text .subtitle { font-size: 0.9rem; opacity: 0.9; font-weight: 300; letter-spacing: 0.5px; }
-        .tagline-japanese { font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif; font-size: 1.1rem; opacity: 0.95; padding: 0.5rem 1.25rem; background: rgba(255,255,255,0.15); border-radius: 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+        .tagline-japanese { font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif; font-size: 1.1rem; opacity: 0.95; padding: 0.5rem 1.25rem; background: rgba(255,255,255,0.15); border-radius: 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); display: block !important; }
         nav { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 50px; padding: 0.5rem; position: relative; }
         nav ul { display: flex; list-style: none; gap: 0.25rem; align-items: center; }
         nav > ul > li { position: relative; }
@@ -68,9 +63,8 @@ layout: null
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 48px; height: 48px; background: var(--ocean-deep); color: white; border: none; border-radius: 50%; font-size: 1.3rem; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.2); opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 500; display: flex; align-items: center; justify-content: center; }
         #back-to-top.visible { opacity: 1; transform: translateY(0); }
         #back-to-top:hover { background: var(--coral-pink); transform: translateY(-3px); }
-        
-        /* HERO AND GRAPHICS REPAIR */
         .hero { position: relative; min-height: 650px; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, #0A4B78 0%, #1E88E5 50%, #A8DADC 100%); }
+        .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 0; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.2) 0%, transparent 50%); animation: float 20s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
         .hero-content { max-width: 1400px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -83,8 +77,9 @@ layout: null
         .btn-primary:hover { background: var(--hibiscus-red); transform: translateY(-3px); box-shadow: 0 6px 30px rgba(255, 107, 157, 0.6); }
         .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 2px solid white; backdrop-filter: blur(10px); }
         .btn-secondary:hover { background: white; color: var(--ocean-deep); transform: translateY(-3px); }
-        .hero-visual { position: relative; height: 500px; display: block !important; visibility: visible !important; }
+        .hero-visual { position: relative; height: 500px; }
         
+        /* GITHUB VISIBILITY OVERRIDE: Forces sections to load fully without waiting on scrolling trigger delays */
         .cultural-element { position: absolute; background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.1); animation: fadeInUp 1s ease-out forwards; opacity: 1 !important; transform: translateY(0) !important; }
         .cultural-element:nth-child(1) { top: 0; right: 0; width: 280px; }
         .cultural-element:nth-child(2) { bottom: 80px; left: 0; width: 320px; }
@@ -92,16 +87,19 @@ layout: null
         .cultural-element h3 { font-family: var(--font-display); color: white; font-size: 1.5rem; margin-bottom: 0.75rem; }
         .cultural-element p { color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.6; }
         .stat { font-size: 2.5rem; font-weight: 700; color: var(--ryukyu-gold); display: block; margin-bottom: 0.25rem; }
-        
         .about-section { padding: 6rem 2rem; background: white; position: relative; }
         .about-section::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(to left, rgba(212, 175, 55, 0.05), transparent); }
         .section-content { max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; }
         .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { font-family: var(--font-display); font-size: 3.5rem; color: var(--ocean-deep); margin-bottom: 1rem; font-weight: 700; opacity: 1 !important; transform: none !important; }
-        .section-header .accent-line { width: 100px; height: 4px; background: linear-gradient(to right, var(--coral-pink), var(--sunset-orange)); margin: 0 auto 2rem; border-radius: 2px; opacity: 1 !important; transform: none !important; animation: pulse-line 2s ease-in-out infinite; }
-        .section-header p { font-size: 1.3rem; color: var(--stone-gray); max-width: 800px; margin: 0 auto; opacity: 0.9 !important; transform: none !important; }
+        .section-header h2 { font-family: var(--font-display); font-size: 3.5rem; color: var(--ocean-deep); margin-bottom: 1rem; font-weight: 700; }
+        .section-header .accent-line { width: 100px; height: 4px; background: linear-gradient(to right, var(--coral-pink), var(--sunset-orange)); margin: 0 auto 2rem; border-radius: 2px; }
+        .section-header p { font-size: 1.3rem; color: var(--stone-gray); max-width: 800px; margin: 0 auto; opacity: 0.9; }
         
+        /* Forces animated elements to stay visible instantly */
+        .section-header h2, .section-header .accent-line, .section-header p { opacity: 1 !important; transform: none !important; }
+        .section-header .accent-line { animation: pulse-line 2s ease-in-out infinite; }
         @keyframes pulse-line { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(1.2); } }
+        
         .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
         .feature-card { background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); border-radius: 20px; padding: 3rem 2.5rem; border: 2px solid rgba(10, 75, 120, 0.1); transition: all 0.4s ease; position: relative; overflow: hidden; }
         .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, var(--coral-pink), var(--sunset-orange)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
@@ -145,7 +143,7 @@ layout: null
         .social-links a:hover { background: var(--coral-pink); transform: translateY(-3px); }
         .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.7; }
         @media (max-width: 1024px) { .hero-content { grid-template-columns: 1fr; gap: 3rem; } .hero-visual { height: 400px; } .showcase-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr 1fr; } nav { display: none; } .hamburger { display: flex; } }
-        @media (max-width: 768px) { .header-content { padding: 1rem 1.25rem; } .hero-text h2 { font-size: 2.5rem; } .section-header h2 { font-size: 2rem; } .feature-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } .tagline-japanese { display: none; } .hero-content { padding: 2.5rem 1.25rem; } }
+        @media (max-width: 768px) { .header-content { padding: 1rem 1.25rem; display: flex !important; } .hero-text h2 { font-size: 2.5rem; } .section-header h2 { font-size: 2rem; } .feature-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } .tagline-japanese { display: block !important; } .hero-content { padding: 2.5rem 1.25rem; } }
         @media (max-width: 480px) { .hero-text h2 { font-size: 2rem; } .section-header h2 { font-size: 1.75rem; } .btn { padding: 0.8rem 1.75rem; font-size: 1rem; } }
     </style>
 </head>
@@ -154,31 +152,38 @@ layout: null
     <header>
         <div class="header-content">
             <div class="logo-section">
-                <a href="{{ site.baseurl }}/#about" style="display:flex;align-items:center;text-decoration:none;">
-                    <img src="data:image/jpeg;base64,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" alt="Okinawa JALT Logo" width="60" height="60" style="border-radius:10px;object-fit:cover;">
-                    <div class="logo-text" style="margin-left:1rem;color:white;">
-                        <h1>Okinawa JALT</h1>
-                        <div class="subtitle">Language Teaching Excellence in the Ryukyu Islands</div>
-                    </div>
+                <a href="#about" style="display:flex;align-items:center;text-decoration:none;">
+                    <img src="data:image/jpeg;base64,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" alt="Okinawa JALT Logo" style="height:55px;width:auto;">
                 </a>
+                <div class="logo-text">
+                    <h1>Okinawa JALT</h1>
+                    <div class="subtitle">The Japan Association for Language Teaching</div>
+                </div>
             </div>
-            <div class="tagline-japanese">沖縄語学教育学会</div>
-            <nav>
+            <div class="tagline-japanese">めんそーれ！琉球列島語学教育研究会</div>
+            <nav id="desktop-nav">
                 <ul>
-                    <li><a href="{{ site.baseurl }}/#about">About</a></li>
+                    <li><a href="#about">About</a></li>
                     <li class="has-dropdown">
-                        <a href="{{ site.baseurl }}/#events">Events</a>
+                        <a href="#events">Events</a>
                         <ul class="dropdown">
-                            <li><a href="{{ site.baseurl }}/#events">Upcoming Workshops</a></li>
-                            <li><a href="{{ site.baseurl }}/#events">Annual Conference</a></li>
-                            <li><a href="{{ site.baseurl }}/#events">Past Events</a></li>
+                            <li><a href="#upcoming">Upcoming Conferences</a></li>
+                            <li><a href="#past">Past Events</a></li>
+                            <li><a href="#proposals">Call for Proposals</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ site.baseurl }}/#showcase">Culture</a></li>
-                    <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
+                    <li class="has-dropdown">
+                        <a href="#publications">Publications</a>
+                        <ul class="dropdown">
+                            <li><a href="#journal">Okinawa JALT Journal</a></li>
+                            <li><a href="#newsletter">Chapter Newsletter</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#join">Join Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger-btn">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -188,199 +193,188 @@ layout: null
 
     <div class="mobile-nav" id="mobile-nav">
         <button class="mobile-close" id="mobile-close-btn">&times;</button>
-        <a href="{{ site.baseurl }}/#about">About</a>
+        <a href="#about">About</a>
         
         <div class="mobile-group-label">Events</div>
         <div class="mobile-sub">
-            <a href="{{ site.baseurl }}/#events">Upcoming Workshops</a>
-            <a href="{{ site.baseurl }}/#events">Annual Conference</a>
-            <a href="{{ site.baseurl }}/#events">Past Events</a>
+            <a href="#upcoming">Upcoming Conferences</a>
+            <a href="#past">Past Events</a>
+            <a href="#proposals">Call for Proposals</a>
         </div>
 
-        <a href="{{ site.baseurl }}/#showcase" style="margin-top:1.25rem;">Culture</a>
-        <a href="{{ site.baseurl }}/#contact">Contact</a>
+        <div class="mobile-group-label">Publications</div>
+        <div class="mobile-sub">
+            <a href="#journal">Okinawa JALT Journal</a>
+            <a href="#newsletter">Chapter Newsletter</a>
+        </div>
+
+        <div class="mobile-group-label">Community</div>
+        <div class="mobile-sub">
+            <a href="#join">Join Us</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
 
-    <button id="back-to-top" aria-label="Back to top">↑</button>
-
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2>Language Teaching <span class="highlight">in Paradise</span></h2>
-                    <p>Welcome to Okinawa JALT, the premier professional network for language educators in the Ryukyu Islands. Since 1980, we have been fostering excellence, collaboration, and innovation in language teaching.</p>
-                    <div class="cta-buttons">
-                        <a href="{{ site.baseurl }}/#events" class="btn btn-primary">Join Our Next Event</a>
-                        <a href="{{ site.baseurl }}/#about" class="btn btn-secondary">Learn More</a>
-                    </div>
+    <section class="hero" id="home">
+        <img class="hero-bg-img" src="images/okinawa-beach.jpg" alt="Okinawa Beach">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Language Teaching <span class="highlight">in Paradise</span></h2>
+                <p>Welcome to the Okinawa Chapter of JALT. Connecting, supporting, and inspiring language educators across the Ryukyu Islands since 1980.</p>
+                <div class="cta-buttons">
+                    <a href="#join" class="btn btn-primary">Become a Member</a>
+                    <a href="#events" class="btn btn-secondary">Explore Events</a>
                 </div>
-                <div class="hero-visual">
-                    <div class="cultural-element">
-                        <span class="stat">40+</span>
-                        <h3>Years of Excellence</h3>
-                        <p>Connecting and inspiring language teaching professionals across Okinawa since 1980.</p>
-                    </div>
-                    <div class="cultural-element">
-                        <span class="stat">100%</span>
-                        <h3>Community Driven</h3>
-                        <p>Run by educators, for educators, supporting global standard practices locally.</p>
-                    </div>
-                    <div class="cultural-element">
-                        <h3>Ryukyu Culture</h3>
-                        <p>Blending contemporary teaching methodologies with deep local insights and traditions.</p>
+            </div>
+            <div class="hero-visual">
+                <div class="cultural-element">
+                    <span class="stat">45+</span>
+                    <h3>Years of Excellence</h3>
+                    <p>Fostering professional development and research in language acquisition across Okinawa.</p>
+                </div>
+                <div class="cultural-element">
+                    <span class="stat">200+</span>
+                    <h3>Active Educators</h3>
+                    <p>A vibrant community of native, domestic, and international language teaching professionals.</p>
+                </div>
+                <div class="cultural-element">
+                    <span class="stat">Annual</span>
+                    <h3>International Conferences</h3>
+                    <p>Hosting world-class researchers, workshops, and peer-reviewed presentations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="section-content">
+            <div class="section-header animated">
+                <h2>About Okinawa JALT</h2>
+                <div class="accent-line"></div>
+                <p>We provide opportunities for professional development, research dissemination, and community building among language teachers at all levels—from kindergarten to university.</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🏝️</span>
+                    <h3>Local & Global Impact</h3>
+                    <p>Rooted deeply in Okinawan community dynamics while bridging connections with language experts globally.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📚</span>
+                    <h3>Research & Journals</h3>
+                    <p>Our members publish cutting-edge methodologies, localized action research, and pedagogical reviews annually.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🤝</span>
+                    <h3>Peer Mentorship</h3>
+                    <p>Whether you are new to teaching in Japan or an established academic researcher, find standard peer groups here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section" id="events">
+        <div class="section-content">
+            <div class="section-header animated">
+                <h2>Featured Chapter Events</h2>
+                <div class="accent-line"></div>
+                <p>Don't miss our quarterly professional development sessions, language research colloquiums, and annual conventions.</p>
+            </div>
+
+            <div class="event-card">
+                <div class="event-header">
+                    <span class="event-date">Upcoming Autumn Event</span>
+                    <h3>2026 Okinawa JALT Autumn Language Conference</h3>
+                    <p>Thematic Focus: Localizing Materials & Navigating Cultural Nuance in the Classroom</p>
+                </div>
+                <div class="event-body">
+                    <p>Join us for an immersive weekend featuring keynote speeches from regional teaching authorities, lightning presentations, and an evening networking reception near the historic Shuri region.</p>
+                    <div class="event-meta">
+                        <div class="meta-item"><span class="meta-icon">📍</span> Okinawa Tech Center & Online</div>
+                        <div class="meta-item"><span class="meta-icon">🕒</span> October 24-25, 2026</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="about-section" id="about">
-            <div class="section-content">
-                <div class="section-header" id="about-header">
-                    <h2>About Okinawa JALT</h2>
-                    <div class="accent-line"></div>
-                    <p>We are a vibrant chapter of the Japan Association for Language Teaching. Our community serves as a bridge for research, professional skills, and local cultural appreciation.</p>
+    <section class="cultural-showcase">
+        <div class="section-content">
+            <div class="section-header animated">
+                <h2>The Spirit of Okinawa</h2>
+                <div class="accent-line"></div>
+                <p>Immerse yourself in the rich cultural history and breathtaking geography that inspires our chapter community daily.</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img class="showcase-image" src="images/shuri-castle.jpg" alt="Shuri Castle Ryukyu History">
+                    <div class="showcase-overlay">
+                        <h4>Ryukyu Heritage</h4>
+                        <p>Explore centuries of unique island diplomacy, language varieties, and enduring cultural pride.</p>
+                    </div>
                 </div>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <span class="feature-icon">🌺</span>
-                        <h3>Local Focus</h3>
-                        <p>Tailored developmental opportunities addressing unique island contexts and remote campus educational settings across the Ryukyu chain.</p>
+                <div class="showcase-item">
+                    <img class="showcase-image" src="images/bingata.jpg" alt="Traditional Bingata Textiles">
+                    <div class="showcase-overlay">
+                        <h4>Bingata Textile Art</h4>
+                        <p>Vibrant, nature-inspired traditional stencil-dyed fabrics representing Okinawan artistic resilience.</p>
                     </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">📚</span>
-                        <h3>Global Standards</h3>
-                        <p>Bringing international research, peer-reviewed practices, and leading language learning methodologies to local school boards and universities.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">🤝</span>
-                        <h3>Inclusive Network</h3>
-                        <p>Whether you teach Kindergarten, University, ALT, or run a private language house, you will find mentorship and resources here.</p>
+                </div>
+                <div class="showcase-item">
+                    <img class="showcase-image" src="images/eisa-dance.jpg" alt="Okinawan Eisa Traditional Drum Dance">
+                    <div class="showcase-overlay">
+                        <h4>Eisa Drum Dancing</h4>
+                        <p>The high-energy, heartbeat-syncing performance art embodying unity, respect, and celebration.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="events-section" id="events">
-            <div class="section-content">
-                <div class="section-header" id="events-header">
-                    <h2>Upcoming Events</h2>
-                    <div class="accent-line"></div>
-                    <p>Participate in our monthly workshops, regular research presentations, and regional networking circles designed to keep your pedagogy fresh.</p>
-                </div>
-                <div class="event-card">
-                    <div class="event-header">
-                        <span class="event-date">Next Chapter Workshop</span>
-                        <h3>Active Learning Strategies for the Modern Classroom</h3>
-                    </div>
-                    <div class="event-body">
-                        <p>Explore practical steps to engage students through collaborative task designs. Perfect for both university instructors and junior high school teachers aiming to maximize student production time.</p>
-                        <div class="event-meta">
-                            <div class="meta-item"><span class="meta-icon">📍</span> Naha Community Center & Zoom</div>
-                            <div class="meta-item"><span class="meta-icon">📅</span> First Saturday of the Month</div>
-                            <div class="meta-item"><span class="meta-icon">⏰</span> 14:00 - 16:30</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cultural-showcase" id="showcase">
-            <div class="section-content">
-                <div class="section-header" id="showcase-header">
-                    <h2>Teaching in Paradise</h2>
-                    <div class="accent-line"></div>
-                    <p>Discover the unique cultural tapestry that makes teaching language in the Ryukyu Islands an unmatched professional adventure.</p>
-                </div>
-                <div class="showcase-grid">
-                    <div class="showcase-item">
-                        <div class="showcase-overlay">
-                            <h4>Shuri Heritage</h4>
-                            <p>Infusing historical settings and local island background narratives into immersive language lesson planning.</p>
-                        </div>
-                    </div>
-                    <div class="showcase-item">
-                        <div class="showcase-overlay">
-                            <h4>Island Communities</h4>
-                            <p>Expanding standard educational materials to reach outer islands via remote connection and community support loops.</p>
-                        </div>
-                    </div>
-                    <div class="showcase-item">
-                        <div class="showcase-overlay">
-                            <h4>Coral Coastlines</h4>
-                            <p>Fostering refreshing, inspiring teaching spaces where education meets standard professional balance and well-being.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact">
+    <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Okinawa JALT</h4>
-                <p>Connecting, supporting, and elevating language instructors across the Ryukyu Islands since 1980.</p>
+                <p>A regional chapter of the Japan Association for Language Teaching (NPO JALT). Empowering teaching communities across the Ryukyu archipelago since 1980.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook">FB</a>
-                    <a href="#" aria-label="Twitter">TW</a>
-                    <a href="#" aria-label="LinkedIn">LN</a>
+                    <a href="#" aria-label="Facebook">🌐</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">📺</a>
                 </div>
             </div>
             <div class="footer-section">
-                <h4>Quick Links</h4>
+                <h4>Quick Access</h4>
                 <ul class="footer-links">
-                    <li><a href="{{ site.baseurl }}/#about">About Us</a></li>
-                    <li><a href="{{ site.baseurl }}/#events">Events Calendar</a></li>
-                    <li><a href="{{ site.baseurl }}/#showcase">Culture Gallery</a></li>
+                    <li><a href="#about">About Our Chapter</a></li>
+                    <li><a href="#events">Conferences & Dates</a></li>
+                    <li><a href="#publications">Journal Submissions</a></li>
+                    <li><a href="#join">Membership Forms</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Resources</h4>
+                <h4>JALT Networks</h4>
                 <ul class="footer-links">
-                    <li><a href="https://jalt.org" target="_blank" rel="noopener">National JALT</a></li>
-                    <li><a href="#">Publications</a></li>
-                    <li><a href="#">Membership Info</a></li>
+                    <li><a href="https://jalt.org" target="_blank" rel="noopener">National JALT Main Site</a></li>
+                    <li><a href="https://jalt-publications.org" target="_blank" rel="noopener">JALT National Publications</a></li>
+                    <li><a href="https://jalt.org/chapters" target="_blank" rel="noopener">Find Other Chapters</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Contact</h4>
-                <p>Got questions about workshops, memberships, or presentation tracks? Drop us a line.</p>
+                <h4>Get in Touch</h4>
+                <p>Have inquiries regarding speaking opportunities, presentation proposals, or registration? Reach out to our executive board handlers anytime.</p>
                 <p style="color: var(--coral-pink); font-weight: 500;">info@okijalt.org</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Okinawa JALT. All rights reserved. Created for okijalt.github.io</p>
+            <p>&copy; 2026 Okinawa JALT Chapter. All Rights Reserved. Crafted with care for the teaching community in paradise.</p>
         </div>
     </footer>
 
+    <button id="back-to-top" aria-label="Scroll to top">▲</button>
+
     <script>
-        // Scroll Animation Observer
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.section-header').forEach(header => {
-            scrollObserver.observe(header);
-        });
-
-        // Smooth Scroll handling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href').split('#')[1];
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Back to Top button logic
+        // Back to Top functionality
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) {
@@ -393,7 +387,7 @@ layout: null
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Hamburger / mobile nav logic
+        // Hamburger / mobile nav
         const hamburger = document.getElementById('hamburger-btn');
         const mobileNav = document.getElementById('mobile-nav');
         const mobileClose = document.getElementById('mobile-close-btn');
@@ -417,7 +411,6 @@ layout: null
             link.addEventListener('click', closeMobileNav);
         });
 
-        // Close on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
                 closeMobileNav();
