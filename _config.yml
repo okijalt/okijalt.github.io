@@ -1,0 +1,10 @@
+title: Okinawa JALT
+description: Language Teaching Excellence in the Ryukyu Islands
+url: "https://okijalt.github.io"
+baseurl: ""
+
+# This tells Jekyll to ignore any system/node files if you expand later
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
