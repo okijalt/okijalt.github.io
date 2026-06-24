@@ -10,12 +10,14 @@ layout: null
     <meta name="keywords" content="Okinawa JALT, language teaching, JALT, EFL, English teaching, Okinawa, Japan, professional development">
     <meta property="og:title" content="Okinawa JALT – Language Teaching in Paradise">
     <meta property="og:description" content="The Okinawa Chapter of JALT – connecting language educators since 1980.">
-    <meta property="og:url" content="https://okijalt.github.io">
+    <meta property="og:url" content="https://okijalt.org">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌺</text></svg>">
     <title>Okinawa JALT – Language Teaching Excellence in the Ryukyu Islands</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --ocean-deep: #0A4B78;
@@ -66,8 +68,9 @@ layout: null
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 48px; height: 48px; background: var(--ocean-deep); color: white; border: none; border-radius: 50%; font-size: 1.3rem; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.2); opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 500; display: flex; align-items: center; justify-content: center; }
         #back-to-top.visible { opacity: 1; transform: translateY(0); }
         #back-to-top:hover { background: var(--coral-pink); transform: translateY(-3px); }
+        
+        /* HERO AND GRAPHICS REPAIR */
         .hero { position: relative; min-height: 650px; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, #0A4B78 0%, #1E88E5 50%, #A8DADC 100%); }
-        .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; z-index: 0; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.2) 0%, transparent 50%); animation: float 20s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
         .hero-content { max-width: 1400px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -80,28 +83,25 @@ layout: null
         .btn-primary:hover { background: var(--hibiscus-red); transform: translateY(-3px); box-shadow: 0 6px 30px rgba(255, 107, 157, 0.6); }
         .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 2px solid white; backdrop-filter: blur(10px); }
         .btn-secondary:hover { background: white; color: var(--ocean-deep); transform: translateY(-3px); }
-        .hero-visual { position: relative; height: 500px; }
-        .cultural-element { position: absolute; background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.1); animation: fadeInUp 1s ease-out forwards; opacity: 0; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        .cultural-element:nth-child(1) { top: 0; right: 0; width: 280px; animation-delay: 0.2s; transform: translateY(20px); }
-        .cultural-element:nth-child(2) { bottom: 80px; left: 0; width: 320px; animation-delay: 0.4s; transform: translateY(20px); }
-        .cultural-element:nth-child(3) { top: 180px; right: 80px; width: 250px; animation-delay: 0.6s; transform: translateY(20px); }
+        .hero-visual { position: relative; height: 500px; display: block !important; visibility: visible !important; }
+        
+        .cultural-element { position: absolute; background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.1); animation: fadeInUp 1s ease-out forwards; opacity: 1 !important; transform: translateY(0) !important; }
+        .cultural-element:nth-child(1) { top: 0; right: 0; width: 280px; }
+        .cultural-element:nth-child(2) { bottom: 80px; left: 0; width: 320px; }
+        .cultural-element:nth-child(3) { top: 180px; right: 80px; width: 250px; }
         .cultural-element h3 { font-family: var(--font-display); color: white; font-size: 1.5rem; margin-bottom: 0.75rem; }
         .cultural-element p { color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.6; }
         .stat { font-size: 2.5rem; font-weight: 700; color: var(--ryukyu-gold); display: block; margin-bottom: 0.25rem; }
+        
         .about-section { padding: 6rem 2rem; background: white; position: relative; }
         .about-section::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(to left, rgba(212, 175, 55, 0.05), transparent); }
         .section-content { max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; }
         .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { font-family: var(--font-display); font-size: 3.5rem; color: var(--ocean-deep); margin-bottom: 1rem; font-weight: 700; }
-        .section-header .accent-line { width: 100px; height: 4px; background: linear-gradient(to right, var(--coral-pink), var(--sunset-orange)); margin: 0 auto 2rem; border-radius: 2px; }
-        .section-header p { font-size: 1.3rem; color: var(--stone-gray); max-width: 800px; margin: 0 auto; opacity: 0.9; }
-        .section-header h2, .section-header .accent-line, .section-header p { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-        .section-header.animated h2 { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
-        .section-header.animated .accent-line { opacity: 1; transform: translateY(0) scaleX(1); transform-origin: center; transition-delay: 0.3s; }
-        .section-header.animated p { opacity: 0.9; transform: translateY(0); transition-delay: 0.5s; }
+        .section-header h2 { font-family: var(--font-display); font-size: 3.5rem; color: var(--ocean-deep); margin-bottom: 1rem; font-weight: 700; opacity: 1 !important; transform: none !important; }
+        .section-header .accent-line { width: 100px; height: 4px; background: linear-gradient(to right, var(--coral-pink), var(--sunset-orange)); margin: 0 auto 2rem; border-radius: 2px; opacity: 1 !important; transform: none !important; animation: pulse-line 2s ease-in-out infinite; }
+        .section-header p { font-size: 1.3rem; color: var(--stone-gray); max-width: 800px; margin: 0 auto; opacity: 0.9 !important; transform: none !important; }
+        
         @keyframes pulse-line { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(1.2); } }
-        .section-header.animated .accent-line { animation: pulse-line 2s ease-in-out infinite; }
         .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
         .feature-card { background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); border-radius: 20px; padding: 3rem 2.5rem; border: 2px solid rgba(10, 75, 120, 0.1); transition: all 0.4s ease; position: relative; overflow: hidden; }
         .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, var(--coral-pink), var(--sunset-orange)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
